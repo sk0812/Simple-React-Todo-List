@@ -8,8 +8,12 @@ export default function TodoInput(props) {
                 setTodoValue(e.target.value)
             }} placeholder="Enter todo..."/>
             <button onClick={() => {
-                handleAddTodos(todoValue)
-                setTodoValue('')
+                if (todoValue == "") {
+                    alert("Todo entry cannot be empty.")
+                } else {
+                    handleAddTodos(todoValue)
+                    setTodoValue('')
+                }
             }}>Add</button>
         </header>
     )
